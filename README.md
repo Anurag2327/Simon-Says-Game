@@ -20,4 +20,4 @@ An interactive memory game built using **HTML, CSS, and JavaScript**. Players mu
 ---
 
 **Author:** Anurag Pandey  
-**GitHub:** https://github.com/anurag2327/simon-game
+**GitHub:** https://github.com/anurag2327/simon-says-game

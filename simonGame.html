@@ -3,24 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simon Game</title>
+    <title>Simon Says Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link 
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="simonGame.css">
 </head>
 <body>
-    <h1>Simon Says Game</h1>
-    <h2>Press any key to start says game</h2>
-    <h3>Highest Score: 0</h3>
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme">&#9789;</button>
 
-    <div class="btn-container">
-        <div class="line-one">
-            <div class="btn red" type="button" id="red"></div>
-            <div class="btn yellow" type="button" id="yellow"></div>
+    <div class="arcade-cabinet">
+        <header class="header">
+            <h1 class="title">SIMON <span>SAYS</span></h1>
+            <p class="subtitle" id="subtitle">Press any key or tap the ring to begin</p>
+        </header>
+
+        <div class="difficulty" id="difficulty">
+            <button class="diff-btn" data-diff="easy">Easy</button>
+            <button class="diff-btn active" data-diff="medium">Medium</button>
+            <button class="diff-btn" data-diff="hard">Hard</button>
         </div>
-        <div class="line-two">
-            <div class="btn green" type="button" id="green"></div>
-            <div class="btn purple" type="button" id="purple"></div>
-        </div>    
+
+        <div class="scoreboard">
+            <div class="score-unit">
+                <span class="score-label">Level</span>
+                <span class="score-value" id="levelDisplay">00</span>
+            </div>
+            <div class="score-unit">
+                <span class="score-label">Best</span>
+                <span class="score-value" id="bestDisplay">00</span>
+            </div>
+        </div>
+
+        <div class="timer-track">
+            <div class="timer-fill" id="timerFill"></div>
+        </div>
+
+        <div class="btn-container" id="ring">
+            <div class="btn red" id="red" data-key="1"></div>
+            <div class="btn yellow" id="yellow" data-key="2"></div>
+            <div class="btn green" id="green" data-key="3"></div>
+            <div class="btn purple" id="purple" data-key="4"></div>
+            <div class="center-hub">
+                <button class="restart-btn" id="restartBtn" title="Restart">&#8635;</button>
+            </div>
+            <div class="pause-overlay" id="pauseOverlay">PAUSED</div>
+        </div>
+
+        <p class="key-hint">Keyboard: press <b>1 2 3 4</b> for red, yellow, green, purple</p>
+
+        <div class="controls">
+            <button class="pause-btn" id="pauseBtn" disabled>Pause</button>
+            <label class="toggle">
+                <input type="checkbox" id="soundToggle" checked>
+                <span>Sound</span>
+            </label>
+        </div>
     </div>
+
+    <aside class="how-to-play">
+        <h2>How to play</h2>
+        <ol>
+            <li>Tap the ring or press any key to start.</li>
+            <li>Watch the sequence of colors flash.</li>
+            <li>Repeat it back by clicking the pads, or press <b>1 2 3 4</b> on your keyboard.</li>
+            <li>Each round adds one more color to remember.</li>
+            <li>Answer before the timer runs out, or it's game over.</li>
+            <li>Pick a difficulty before you start to change speed and time limits.</li>
+        </ol>
+    </aside>
+
+    <footer class="credit">
+        <div class="credit-socials">
+            <a href="https://www.linkedin.com/in/anuragpandey2265" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/anuragg083" target="_blank" rel="noopener noreferrer" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        Built by <span>Anurag Pandey</span>
+    </footer>
 
     <script src="simonGame.js"></script>
 </body>

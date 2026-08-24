@@ -86,3 +86,10 @@ function reset(){
     started=false;
     level=0;
 }
+
+let rulesbtn=document.querySelector(".rulesbtn");
+let rules=document.querySelector(".rules");
+
+rulesbtn.addEventListener("mousedown",function(){
+    rules.classList.add("show");
+});
